@@ -6,4 +6,4 @@ An international food trivia question is presented with four possible answer opt
 The user clicks one of the four answers for each question.
 When the timer runs out, or the user clicks "submit", the game is scored.
 
-This game uses HTML, CSS , Javascript with timers and makes use of jQUery and Bootsrtap libraries.
+This game uses HTML, CSS , Javascript with timers and makes use of jQuery and Bootsrtap libraries.

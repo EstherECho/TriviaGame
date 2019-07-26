@@ -3,6 +3,10 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
+    color: black;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orangered;
 }
 
 /* #display    {

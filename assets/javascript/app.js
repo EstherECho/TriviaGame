@@ -87,34 +87,42 @@ function startCountdown(){
 function loadQuestions() {
     timer = setInterval(startCountdown, 1000);
 
-    for (j=0; j<questionArray.length; j++) {
-        let currentItem=questionArray[j];
-        let questionIndex=("<h3>" +currentItem.question +"</h3>");
+    for (var j=0; j<questionArray.length; j++) {
+        // let currentItem=questionArray[j];
+        // var wellSection= $("<div>");
+        // wellSection.addClass("well");
+        // wellSection.attr("id", "wellSection-" + currentItem);
+        // $("#wellSection").append(wellSection);
+        // let questionIndex=("<h3>" +currentItem.question +"</h3>");
+        // $("#questionArray").append(questionIndex);
+        $("#questionArray").append("<h2>" +questionArray[j].question +"</h2>");
 
-        $("#questionArray").append(questionIndex);
+        for (var i=0; i<questionArray[j].options.length; i++) {
+        //     $("#wellSection").append("<button class='answer-button' id='button' data-name='" + currentItem.options[i]
+        //  + "'>" + currentItem.options[i] + "</button>");
 
-        for (i=0; i<4; i++) {
-            $("#answerList").append("<button class='answer-button' id='button' data-name='" + currentItem.options[i]
-         + "'>" + currentItem.options[i] + "</button>");
-
-            $('.answer-button').on('click', function(event) {
-                if($(event.target).attr("data-name") === currentItem.answer){
-                correctAnswer=0;
-                correctAnswer++;
-                console.log(currentItem.answer);
-                console.log("answer is correct!")
-                console.log(correctAnswer);
-                }
-                else{
-                incorrectAnswer=0;
-                incorrectAnswer++;
-                console.log(currentItem.answer);
-                console.log("answer is incorrect!")
-                console.log("incorrect answers: " + incorrectAnswer);
-                }    
-            });
+        $("#questionArray").append("<button class='answer-button' name='question-" +i +"'value='" +questionArray[j].options[i] +"''>" +questionArray[j].options[i]);
+            compare(j,i);
         }
     }
+}
+function compare(j,i){
+    $(document).on('click',".answer-button", function(event) {
+        if($(event.target).attr("data-name") === questionArray[j].options[i]){
+        correctAnswer=0;
+        correctAnswer++;
+        console.log(questionArray[j].options[i]);
+        console.log("answer is correct!")
+        console.log(correctAnswer);
+        }
+        else{
+        incorrectAnswer=0;
+        incorrectAnswer++;
+        console.log(questionArray[j].options[i]);
+        console.log("answer is incorrect!")
+        console.log("incorrect answers: " + questionArray[j].options[i]);
+        }    
+    });
 }
 
 

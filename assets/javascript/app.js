@@ -63,7 +63,7 @@ var questionArray = [
 
 var correctAnswer;
 var incorrectAnswer;
-var counter = 90;
+var counter = 60;
 var timer;
 
 $('#startBtn').on('click', function(){
@@ -103,7 +103,7 @@ function loadQuestions() {
 
         $("#questionArray").append("<input type= 'radio' class='answer-button' name='question-" +i +"'value='" +questionArray[j].options[i] +"''>" +questionArray[j].options[i]);
             compare(j,i);
-        }
+    }
     }
 }
 function compare(j,i){
@@ -120,17 +120,19 @@ function compare(j,i){
         incorrectAnswer++;
         console.log(questionArray[j].options[i]);
         console.log("answer is incorrect!")
-        console.log("incorrect answers: " + questionArray[j].options[i]);
-        }    
+        console.log("incorrect answers: " + questionArray[j].options[i]);  
+        }
     });
 }
 
 
-    $("#submitBtn").on('click', function() {
-        timesUp();
-        counter=0;
-        clearInterval(timer);
-    });
+$("#submitBtn").on('click', function() {
+    timesUp();
+    counter=0;
+    clearInterval(timer);
+    $('#timeLeft').empty();
+    $('#timeLeft').append('<h3>Time Remaining: ' + counter + '</h3>');
+});
 
 function timesUp() {
     var totalAnswered = correctAnswer+incorrectAnswer;
@@ -138,4 +140,4 @@ function timesUp() {
     $('#correctAnswers').html("<br><br><h3>Correct Answers: " + correctAnswer+ "</h3>");
     $('#incorrectAnswers').html("<h3>Incorrect Answers: " + incorrectAnswer+ "</h3>");
     $('#unanswered').html("<h3>Unanswered: " + unanswered+ "</h3>" + "<br></br>");
-};
+}

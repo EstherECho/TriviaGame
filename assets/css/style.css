@@ -1,12 +1,9 @@
 .body   { 
-    background-image: url("https://thewoksoflife.com/wp-content/uploads/2017/01/kimchi-ramen-9.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
     color: black;
     font-weight: bold;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: orangered;
+    margin: 40px;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
 }
 
 /* #display    {
@@ -17,7 +14,7 @@
     font-family: 'Pacifico', cursive;
     font-size: 20px;
 	padding: 10px;
-	margin-top: 200px;
+	margin-top: 100px;
 }
 
 #startBtn {
@@ -44,4 +41,9 @@
 	text-align: center;
 	height: 100%;
     width: 100%;
+
+    background-image: url("https://cornerstonedelco.org/wp-content/uploads/2018/08/food-1014x487.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
 }

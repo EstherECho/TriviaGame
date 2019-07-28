@@ -12,30 +12,30 @@ var questionArray = [
     {
         question: "Which of these is NOT a national breakfast dish around the world?",
         options: [
-            "Fish broth with lemongrass, garlic, ginger, and fried fish cakes.",
-            "Coconut rice, anchovies, hot sauce, peanuts, and boiled eggs.",
+            "Fish broth with lemongrass, garlic, ginger, and fried fish cakes",
+            "Coconut rice, anchovies, hot sauce, peanuts, and boiled eggs",
             "Tripe with eggs",
-            "Kimchi ramen. ",
+            "Kimchi ramen",
         ],
         answer: "Kimchi ramen.",
     },
     {
         question: "Which of these is NOT a national picnic dish around the world?",
         options: [
-            "Mussels, octopus, and unleavened bread.",
-            "Fried sausage-wrapped boiled egg.",
-            "Pickled herring with schnapps.",
-            "Potato casserole with cheese, cream, butter, and cornflakes.",
+            "Mussels, octopus, and unleavened bread",
+            "Fried sausage-wrapped boiled egg",
+            "Pickled herring with schnapps",
+            "Potato casserole with cheese, cream, butter, and cornflakes",
         ],
-        answer: "Potato casserole with cheese, cream, butter, and cornflakes.",
+        answer: "Potato casserole with cheese, cream, butter, and cornflakes",
     },
     {
         question: "Which of the following is a real wedding cake tradition around the world?",
         options: [
-            "A cake topped with egg noodles in Thailand.",
-            "A gold-leaf decorated cake topped with a living tree in Bermuda.",
-            "A tower of cream-filled puff pastry in the form of a gigantic pyramid in France.",
-            "All of the above.",
+            "A cake topped with egg noodles in Thailand",
+            "A gold-leaf decorated cake topped with a living tree in Bermuda",
+            "A tower of cream-filled puff pastry in the form of a gigantic pyramid in France",
+            "All of the above",
         ],
         answer: "All of the above.",
     },
@@ -63,7 +63,7 @@ var questionArray = [
 
 var correctAnswer;
 var incorrectAnswer;
-var counter = 10;
+var counter = 90;
 var timer;
 
 $('#startBtn').on('click', function(){
@@ -101,14 +101,14 @@ function loadQuestions() {
         //     $("#wellSection").append("<button class='answer-button' id='button' data-name='" + currentItem.options[i]
         //  + "'>" + currentItem.options[i] + "</button>");
 
-        $("#questionArray").append("<button class='answer-button' name='question-" +i +"'value='" +questionArray[j].options[i] +"''>" +questionArray[j].options[i]);
+        $("#questionArray").append("<input type= 'radio' class='answer-button' name='question-" +i +"'value='" +questionArray[j].options[i] +"''>" +questionArray[j].options[i]);
             compare(j,i);
         }
     }
 }
 function compare(j,i){
     $(document).on('click',".answer-button", function(event) {
-        if($(event.target).attr("data-name") === questionArray[j].options[i]){
+        if($(event.target).attr("value") === questionArray[j].options[i]){
         correctAnswer=0;
         correctAnswer++;
         console.log(questionArray[j].options[i]);
@@ -128,6 +128,8 @@ function compare(j,i){
 
     $("#submitBtn").on('click', function() {
         timesUp();
+        counter=0;
+        clearInterval(timer);
     });
 
 function timesUp() {
